@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game - Online & Offline | Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-dark: #1e293b;
+            --accent-cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-nav a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 0 20px 0;
+        }
+
+        .meta-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: #1e293b;
+            border: 1px solid var(--border-color);
+            color: var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Call To Action Controls */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-cyan);
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #334155;
+            color: white;
+            border: 1px solid #475569;
+        }
+
+        .btn-secondary:hover {
+            background-color: #475569;
+        }
+
+        /* Layout Grid split */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .portfolio-card {
+            background-color: var(--card-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+        }
+
+        h2.section-title {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 12px;
+        }
+
+        /* Tabs Menu */
+        .tabs-container {
+            margin-top: 30px;
+        }
+
+        .tabs-menu {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--accent-cyan);
+            border-bottom: 2px solid var(--accent-cyan);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .mode-item {
+            background: #152033;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #24334d;
+        }
+
+        .mode-item h3 {
+            margin-top: 0;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Mockup Display Box */
+        .screenshot-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mockup-wrapper {
+            background: #000;
+            border-radius: 14px;
+            padding: 10px;
+            border: 4px solid #334155;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+        }
+
+        .mockup-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .mockup-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        strong {
+            color: white;
+        }
+
+        @media (max-width: 850px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="back-nav"><a href="#">← Back to Main Portfolio</a></div>
+
+        <header>
+            <h1>MATH GAME — ONLINE & OFFLINE</h1>
+            <p class="tagline">A fast-paced, brain-training mobile landscape title designed independently over six months to enhance focus and calculation speed.</p>
+            <div class="meta-badges">
+                <span class="badge">Unity Engine</span>
+                <span class="badge">C# Programming</span>
+                <span class="badge">Multiplayer Networking</span>
+                <span class="badge">Android Deployment</span>
+            </div>
+        </header>
+
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary" target="_blank">📲 Play Store Build</a>
+            <a href="#" class="btn btn-secondary" target="_blank">🎬 View Gameplay Reel</a>
+            <a href="#" class="btn btn-secondary" target="_blank">📂 Request Source Code</a>
+        </div>
+
+        <div class="main-grid">
+            
+            <div class="content-left">
+                <div class="portfolio-card">
+                    <h2 class="section-title">Project Overview</h2>
+                    <p>What started out as a targeted weekend design experiment evolved into a fully-featured standalone production deployment with custom artwork integration, state serialization, and global room connectivity.</p>
+                </div>
+
+                <div class="tabs-container">
+                    <div class="tabs-menu">
+                        <button class="tab-btn active" onclick="switchTab(event, 'modes')">🎮 Game Modes</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tech')">🛠️ Tech Systems</button>
+                    </div>
+
+                    <div id="modes" class="tab-content active">
+                        <div class="mode-item">
+                            <h3>🍓 1. Fruit Game Mode</h3>
+                            <p>Solve dynamic 3-equation logic puzzles where operators and icons establish quantitative relationships before answering the final variable.</p>
+                            <ul>
+                                <li>Difficulty values auto-scale gracefully with every perfect computation streak.</li>
+                                <li>Success feeds into an idle-progression mechanic where player correct runs actively build and rotate unique player properties via screen swipes.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>🔥 2. Rapid Fire Mode</h3>
+                            <p>Test processing speeds by accurately completing as many simple numeric formulas as possible before the clock expires.</p>
+                            <ul>
+                                <li>Configurable session conditions: Custom Question Length, Number of Digits, and Timer durations before initiation.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>🌐 3. Multiplayer Matchmaking Mode</h3>
+                            <p>Allows participants to cross-connect globally to compete in unified challenge spaces inside shared session instances.</p>
+                            <ul>
+                                <li>Streamlined 2-player lobby setup supporting independent match host generation and direct Room ID handshakes.</li>
+                                <li>Integrated live real-time interaction systems handling textual communications cleanly across players during active play.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>✏️ 4. Complete the Equation Mode</h3>
+                            <p>A fast-paced structural twist on traditional time-attack calculation runs where missing operators/operands must be discovered contextually.</p>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>♾️ 5. Endless Endurance Mode</h3>
+                            <p>A pure tracking framework with zero active time counters designed for high-streak retention loops where any single computational error triggers a run-loss condition.</p>
+                        </div>
+                    </div>
+
+                    <div id="tech" class="tab-content">
+                        <div class="mode-item">
+                            <h3>📡 Network Infrastructure</h3>
+                            <p>Realized global multi-room operations safely using specialized remote invocation architecture patterns:</p>
+                            <ul>
+                                <li><strong>Unity Networking & RPCs:</strong> Handles instantaneous gameplay state mutations and text chat updates securely between room creator and joiner nodes.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>🌍 Memory-Optimized Localization</h3>
+                            <p>Built an in-house custom translation router handling Arabic, Hindi, Filipino, and English seamlessly:</p>
+                            <ul>
+                                <li><strong>Dynamic Asset Streaming:</strong> Only loads string arrays for the actively selected profile language, minimizing runtime memory footprint and allocation spikes.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mode-item">
+                            <h3>💡 Tactical Utility Subsystems</h3>
+                            <ul>
+                                <li><strong>50/50 Hint Module:</strong> Programs programmatic parsing routines to drop two bad variable buttons cleanly from UI canvas view upon input invocation.</li>
+                                <li><strong>Smart Hint Router:</strong> Contextually swaps highly nested mathematical strings for clear, basic algebraic equivalents mid-run to assist target focus retention.</li>
+                                <li><strong>Daily Reward System:</strong> Drives customer monetization and retention loops through automated 7-day calendar claims, unlocking new home asset structures.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshot-gallery">
+                <div class="mockup-wrapper">
+                    <img src="assets/math_promo.png" alt="Math Game Main Splash Artwork">
+                    <div class="mockup-caption">Custom Project Cover Artwork</div>
+                </div>
+
+                <div class="mockup-wrapper">
+                    <img src="assets/math_screen1.png" alt="Dashboard Hub and Mode Selection Selection Interface">
+                    <div class="mockup-caption">Landscape Game Selection Hub Interface</div>
+                </div>
+
+                <div class="mockup-wrapper">
+                    <img src="assets/math_screen2.png" alt="Fruit equation grid puzzle interface layer">
+                    <div class="mockup-caption">Active Fruit Equation Level Canvas with House Serialization Model</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
