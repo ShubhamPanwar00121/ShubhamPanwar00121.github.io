@@ -1,0 +1,234 @@
+{
+    margin0;
+    padding0;
+    box-sizingborder-box;
+}
+
+body{
+    font-familyArial, sans-serif;
+    background#0b0f18;
+    colorwhite;
+    overflow-xhidden;
+}
+
+ Background 
+bodybefore{
+    content'';
+    positionfixed;
+    inset0;
+    background
+    radial-gradient(circle at top left,#ff730020,transparent 30%),
+    radial-gradient(circle at bottom right,#00ffcc15,transparent 30%),
+    linear-gradient(to bottom,#05070f,#0f172a);
+    z-index-2;
+}
+
+.overlay{
+    positionfixed;
+    inset0;
+    backgroundurl('httpswww.transparenttextures.compatternscubes.png');
+    opacity.05;
+}
+
+ Hero 
+
+.hero{
+    min-height100vh;
+    displayflex;
+    align-itemscenter;
+    justify-contentspace-between;
+    padding80px;
+    gap50px;
+}
+
+.hero-content{
+    max-width600px;
+}
+
+.hero h1{
+    font-size70px;
+    color#ffd93d;
+    margin-bottom20px;
+    text-shadow0 0 30px rgba(255,217,61,.5);
+}
+
+.hero p{
+    font-size22px;
+    line-height1.8;
+    color#ddd;
+    margin-bottom30px;
+}
+
+.hero-image img{
+    width500px;
+    animationfloat 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transformtranslateY(0);}
+    50%{transformtranslateY(-15px);}
+    100%{transformtranslateY(0);}
+}
+
+.game-button,
+.main-btn{
+    displayinline-block;
+    backgroundlinear-gradient(45deg,#ff8a00,#ff0058);
+    colorwhite;
+    padding18px 35px;
+    border-radius50px;
+    text-decorationnone;
+    font-size18px;
+    transition.3s;
+    box-shadow0 0 30px rgba(255,0,88,.3);
+}
+
+.game-buttonhover,
+.main-btnhover{
+    transformtranslateY(-5px) scale(1.05);
+}
+
+ Header 
+
+.top-bar{
+    displayflex;
+    justify-contentspace-between;
+    align-itemscenter;
+    padding30px 80px;
+}
+
+ Banner 
+
+.banner-section{
+    displayflex;
+    justify-contentcenter;
+    padding30px;
+}
+
+.promo-img{
+    width85%;
+    border-radius30px;
+    box-shadow0 0 50px rgba(255,217,61,.2);
+}
+
+ Intro 
+
+.intro{
+    text-aligncenter;
+    padding60px 20px;
+}
+
+.intro h2{
+    font-size40px;
+    color#ffd93d;
+    margin-bottom20px;
+}
+
+.intro p{
+    max-width900px;
+    marginauto;
+    font-size20px;
+    line-height1.8;
+}
+
+ Cards 
+
+.content-wrapper{
+    width90%;
+    marginauto;
+}
+
+.feature-card{
+    displayflex;
+    align-itemscenter;
+    gap50px;
+    margin80px 0;
+    backgroundrgba(255,255,255,.04);
+    border1px solid rgba(255,255,255,.08);
+    border-radius30px;
+    padding40px;
+    backdrop-filterblur(10px);
+}
+
+.reverse{
+    flex-directionrow-reverse;
+}
+
+.feature-card img{
+    width350px;
+    border-radius20px;
+    transition.3s;
+    box-shadow0 0 40px rgba(255,140,0,.2);
+}
+
+.feature-card imghover{
+    transformscale(1.05);
+}
+
+.text h2{
+    font-size36px;
+    color#ffd93d;
+    margin-bottom20px;
+}
+
+.text p{
+    font-size20px;
+    line-height1.8;
+}
+
+ Gallery 
+
+.gallery-grid{
+    displaygrid;
+    grid-template-columnsrepeat(auto-fit,minmax(280px,1fr));
+    gap25px;
+    margin60px 0;
+}
+
+.gallery-grid img{
+    width100%;
+    border-radius20px;
+    transition.3s;
+    box-shadow0 0 30px rgba(0,255,200,.2);
+}
+
+.gallery-grid imghover{
+    transformtranslateY(-10px) scale(1.03);
+}
+
+footer{
+    text-aligncenter;
+    padding70px 20px;
+}
+
+@media(max-width900px){
+
+    .hero{
+        flex-directioncolumn;
+        text-aligncenter;
+        padding40px 20px;
+    }
+
+    .hero h1{
+        font-size50px;
+    }
+
+    .hero-image img{
+        width100%;
+    }
+
+    .feature-card,
+    .reverse{
+        flex-directioncolumn;
+    }
+
+    .feature-card img{
+        width100%;
+    }
+
+    .top-bar{
+        flex-directioncolumn;
+        gap20px;
+        padding30px;
+    }
+}
