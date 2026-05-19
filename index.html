@@ -24,7 +24,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -75,7 +75,6 @@
             text-transform: uppercase;
         }
 
-        /* Call To Action Controls */
         .cta-group {
             display: flex;
             gap: 15px;
@@ -115,7 +114,6 @@
             background-color: #475569;
         }
 
-        /* Layout Grid split */
         .main-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -192,33 +190,75 @@
             gap: 8px;
         }
 
-        /* Mockup Display Box */
+        /* Upgraded Slider Component Layout */
         .screenshot-gallery {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            position: sticky;
+            top: 20px;
         }
 
-        .mockup-wrapper {
+        .slider-box {
             background: #000;
             border-radius: 14px;
             padding: 10px;
             border: 4px solid #334155;
             box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+            position: relative;
         }
 
-        .mockup-wrapper img {
+        .slider-box img {
             width: 100%;
-            display: block;
+            display: none;
             border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .slider-box img.active {
+            display: block;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            background: var(--card-dark);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .slide-arrow {
+            background: #334155;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .slide-arrow:hover {
+            background: var(--accent-cyan);
+            color: #0f172a;
+        }
+
+        .slider-counter {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
         .mockup-caption {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            font-size: 0.9rem;
+            color: var(--text-main);
             text-align: center;
-            margin-top: 8px;
-            font-style: italic;
+            font-weight: 600;
+            margin: 5px 0;
+            min-height: 24px;
         }
 
         ul {
@@ -239,6 +279,10 @@
             .main-grid {
                 grid-template-columns: 1fr;
             }
+            .screenshot-gallery {
+                position: relative;
+                top: 0;
+            }
         }
     </style>
 </head>
@@ -249,7 +293,7 @@
 
         <header>
             <h1>MATH GAME — ONLINE & OFFLINE</h1>
-            <p class="tagline">A fast-paced, brain-training mobile landscape title designed independently over six months to enhance focus and calculation speed.</p>
+            <p class="tagline">A fast-paced, brain-training mobile landscape title designed independently over six months to enhance focus and calculation speed[cite: 11, 12, 23].</p>
             <div class="meta-badges">
                 <span class="badge">Unity Engine</span>
                 <span class="badge">C# Programming</span>
@@ -259,9 +303,9 @@
         </header>
 
         <div class="cta-group">
-            <a href="#" class="btn btn-primary" target="_blank">📲 Play Store Build</a>
-            <a href="#" class="btn btn-secondary" target="_blank">🎬 View Gameplay Reel</a>
-            <a href="#" class="btn btn-secondary" target="_blank">📂 Request Source Code</a>
+            <a href="#" class="btn btn-primary" target="_blank">📲 Play Store Build [cite: 24]</a>
+            <a href="#" class="btn btn-secondary" target="_blank">🎬 View Gameplay Reel </a>
+            <a href="#" class="btn btn-secondary" target="_blank">📂 Request Source Code </a>
         </div>
 
         <div class="main-grid">
@@ -269,7 +313,7 @@
             <div class="content-left">
                 <div class="portfolio-card">
                     <h2 class="section-title">Project Overview</h2>
-                    <p>What started out as a targeted weekend design experiment evolved into a fully-featured standalone production deployment with custom artwork integration, state serialization, and global room connectivity.</p>
+                    <p>What started out as a targeted weekend design experiment evolved into a fully-featured standalone production deployment with custom artwork integration, state serialization, and global room connectivity[cite: 12, 22].</p>
                 </div>
 
                 <div class="tabs-container">
@@ -280,39 +324,39 @@
 
                     <div id="modes" class="tab-content active">
                         <div class="mode-item">
-                            <h3>🍓 1. Fruit Game Mode</h3>
-                            <p>Solve dynamic 3-equation logic puzzles where operators and icons establish quantitative relationships before answering the final variable.</p>
+                            <h3>🍓 1. Fruit Game Mode [cite: 27]</h3>
+                            <p>Solve dynamic 3-equation logic puzzles where operators and icons establish quantitative relationships before answering the final variable[cite: 36, 37].</p>
                             <ul>
-                                <li>Difficulty values auto-scale gracefully with every perfect computation streak.</li>
-                                <li>Success feeds into an idle-progression mechanic where player correct runs actively build and rotate unique player properties via screen swipes.</li>
+                                <li>Difficulty values auto-scale gracefully with every perfect computation streak[cite: 38].</li>
+                                <li>Success feeds into an idle-progression mechanic where player correct runs actively build and rotate unique player properties via screen swipes[cite: 14, 39].</li>
                             </ul>
                         </div>
 
                         <div class="mode-item">
-                            <h3>🔥 2. Rapid Fire Mode</h3>
-                            <p>Test processing speeds by accurately completing as many simple numeric formulas as possible before the clock expires.</p>
+                            <h3>🔥 2. Rapid Fire Mode [cite: 49]</h3>
+                            <p>Test processing speeds by accurately completing as many simple numeric formulas as possible before the clock expires[cite: 61].</p>
                             <ul>
-                                <li>Configurable session conditions: Custom Question Length, Number of Digits, and Timer durations before initiation.</li>
+                                <li>Configurable session conditions: Custom Question Length, Number of Digits, and Timer durations before initiation[cite: 63].</li>
                             </ul>
                         </div>
 
                         <div class="mode-item">
-                            <h3>🌐 3. Multiplayer Matchmaking Mode</h3>
-                            <p>Allows participants to cross-connect globally to compete in unified challenge spaces inside shared session instances.</p>
+                            <h3>🌐 3. Multiplayer Matchmaking Mode [cite: 64]</h3>
+                            <p>Allows participants to cross-connect globally to compete in unified challenge spaces inside shared session instances[cite: 81].</p>
                             <ul>
-                                <li>Streamlined 2-player lobby setup supporting independent match host generation and direct Room ID handshakes.</li>
-                                <li>Integrated live real-time interaction systems handling textual communications cleanly across players during active play.</li>
+                                <li>Streamlined 2-player lobby setup supporting independent match host generation and direct Room ID handshakes[cite: 81, 87].</li>
+                                <li>Integrated live real-time interaction systems handling textual communications cleanly across players during active play[cite: 82].</li>
                             </ul>
                         </div>
 
                         <div class="mode-item">
-                            <h3>✏️ 4. Complete the Equation Mode</h3>
-                            <p>A fast-paced structural twist on traditional time-attack calculation runs where missing operators/operands must be discovered contextually.</p>
+                            <h3>✏️ 4. Complete the Equation Mode [cite: 88]</h3>
+                            <p>A fast-paced structural twist on traditional time-attack calculation runs where missing operators/operands must be discovered contextually[cite: 111, 112].</p>
                         </div>
 
                         <div class="mode-item">
-                            <h3>♾️ 5. Endless Endurance Mode</h3>
-                            <p>A pure tracking framework with zero active time counters designed for high-streak retention loops where any single computational error triggers a run-loss condition.</p>
+                            <h3>♾️ 5. Endless Endurance Mode [cite: 113]</h3>
+                            <p>A pure tracking framework with zero active time counters designed for high-streak retention loops where any single computational error triggers a run-loss condition[cite: 127, 129].</p>
                         </div>
                     </div>
 
@@ -321,24 +365,24 @@
                             <h3>📡 Network Infrastructure</h3>
                             <p>Realized global multi-room operations safely using specialized remote invocation architecture patterns:</p>
                             <ul>
-                                <li><strong>Unity Networking & RPCs:</strong> Handles instantaneous gameplay state mutations and text chat updates securely between room creator and joiner nodes.</li>
+                                <li><strong>Unity Networking & RPCs:</strong> Handles instantaneous gameplay state mutations and text chat updates securely between room creator and joiner nodes[cite: 82, 87].</li>
                             </ul>
                         </div>
 
                         <div class="mode-item">
                             <h3>🌍 Memory-Optimized Localization</h3>
-                            <p>Built an in-house custom translation router handling Arabic, Hindi, Filipino, and English seamlessly:</p>
+                            <p>Built an in-house custom translation router handling Arabic, Hindi, Filipino, and English seamlessly[cite: 169, 175, 176]:</p>
                             <ul>
-                                <li><strong>Dynamic Asset Streaming:</strong> Only loads string arrays for the actively selected profile language, minimizing runtime memory footprint and allocation spikes.</li>
+                                <li><strong>Dynamic Asset Streaming:</strong> Only loads string arrays for the actively selected profile language, minimizing runtime memory footprint and allocation spikes[cite: 176, 181].</li>
                             </ul>
                         </div>
 
                         <div class="mode-item">
                             <h3>💡 Tactical Utility Subsystems</h3>
                             <ul>
-                                <li><strong>50/50 Hint Module:</strong> Programs programmatic parsing routines to drop two bad variable buttons cleanly from UI canvas view upon input invocation.</li>
-                                <li><strong>Smart Hint Router:</strong> Contextually swaps highly nested mathematical strings for clear, basic algebraic equivalents mid-run to assist target focus retention.</li>
-                                <li><strong>Daily Reward System:</strong> Drives customer monetization and retention loops through automated 7-day calendar claims, unlocking new home asset structures.</li>
+                                <li><strong>50/50 Hint Module:</strong> Programs programmatic parsing routines to drop two bad variable buttons cleanly from UI canvas view upon input invocation[cite: 135].</li>
+                                <li><strong>Smart Hint Router:</strong> Contextually swaps highly nested mathematical strings for clear, basic algebraic equivalents mid-run to assist target focus retention[cite: 136].</li>
+                                <li><strong>Daily Reward System:</strong> Drives customer monetization and retention loops through automated 7-day calendar claims, unlocking new home asset structures[cite: 153, 164, 165].</li>
                             </ul>
                         </div>
                     </div>
@@ -346,19 +390,21 @@
             </div>
 
             <div class="screenshot-gallery">
-                <div class="mockup-wrapper">
-                    <img src="assets/math_promo.png" alt="Math Game Main Splash Artwork">
-                    <div class="mockup-caption">Custom Project Cover Artwork</div>
+                <div class="slider-box">
+                    <img src="assets/math_promo.png" class="active" data-caption="Custom Project Brain Cover Artwork">
+                    <img src="assets/math_screen1.jpg" data-caption="Multiplayer Lobby Hub View">
+                    <img src="assets/math_screen2.jpg" data-caption="Active Gameplay Interface with Seriailzed House Build Grid">
+                    <img src="assets/math_screen3.jpg" data-caption="Pre-Game Variable Parameter & Configuration Canvas">
+                    <img src="assets/math_screen4.jpg" data-caption="In-Game Hint Module Mechanics Overlay">
+                    <img src="assets/math_screen5.jpg" data-caption="7-Day Retention Automated Calendar Framework View">
+                    
+                    <div class="mockup-caption" id="caption-box">Custom Project Brain Cover Artwork</div>
                 </div>
 
-                <div class="mockup-wrapper">
-                    <img src="assets/math_screen1.png" alt="Dashboard Hub and Mode Selection Selection Interface">
-                    <div class="mockup-caption">Landscape Game Selection Hub Interface</div>
-                </div>
-
-                <div class="mockup-wrapper">
-                    <img src="assets/math_screen2.png" alt="Fruit equation grid puzzle interface layer">
-                    <div class="mockup-caption">Active Fruit Equation Level Canvas with House Serialization Model</div>
+                <div class="slider-nav">
+                    <button class="slide-arrow" onclick="moveSlide(-1)">◀ Prev</button>
+                    <div class="slider-counter" id="counter-box">Image 1 of 6</div>
+                    <button class="slide-arrow" onclick="moveSlide(1)">Next ▶</button>
                 </div>
             </div>
 
@@ -366,15 +412,30 @@
     </div>
 
     <script>
+        // Content Tab Switcher Routine
         function switchTab(event, tabId) {
             const tabs = document.querySelectorAll('.tab-content');
             const buttons = document.querySelectorAll('.tab-btn');
-            
             tabs.forEach(tab => tab.classList.remove('active'));
             buttons.forEach(btn => btn.classList.remove('active'));
-            
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
+        }
+
+        // Active Slider State Index Machine
+        let currentIdx = 0;
+        const slides = document.querySelectorAll(".slider-box img");
+        const captionBox = document.getElementById("caption-box");
+        const counterBox = document.getElementById("counter-box");
+
+        function moveSlide(direction) {
+            slides[currentIdx].classList.remove("active");
+            currentIdx = (currentIdx + direction + slides.length) % slides.length;
+            slides[currentIdx].classList.add("active");
+            
+            // Re-render strings dynamically
+            captionBox.innerText = slides[currentIdx].getAttribute("data-caption");
+            counterBox.innerText = `Image ${currentIdx + 1} of ${slides.length}`;
         }
     </script>
 </body>
