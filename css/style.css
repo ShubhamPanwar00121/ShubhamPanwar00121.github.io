@@ -958,3 +958,15 @@ footer{
     box-shadow:
     0 30px 80px rgba(255,140,0,.18);
 }
+
+.custom-link{
+    color:#ffb347;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s ease;
+}
+
+.custom-link:hover{
+    color:#ff7b00;
+    text-shadow:0 0 12px rgba(255,140,0,.4);
+}
