@@ -907,6 +907,13 @@ footer{
 .blender-showcase{
     display:block !important;
     padding:55px;
+    text-align:center;
+}
+
+.blender-showcase .text{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .blender-showcase h2{
@@ -922,12 +929,15 @@ footer{
 
 .model-image{
     width:100%;
+    max-width:1000px;
+    display:block;
+
+    margin:0 auto 35px auto;
+
     border-radius:28px;
 
     border:
     2px solid rgba(255,255,255,.08);
-
-    margin-bottom:35px;
 
     box-shadow:
     0 20px 60px rgba(0,0,0,.35);
@@ -936,8 +946,7 @@ footer{
 }
 
 .model-image:hover{
-    transform:
-    scale(1.01);
+    transform:scale(1.01);
 
     box-shadow:
     0 30px 80px rgba(255,140,0,.18);
