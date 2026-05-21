@@ -970,3 +970,25 @@ footer{
     color:#ff7b00;
     text-shadow:0 0 12px rgba(255,140,0,.4);
 }
+
+/* ========================= */
+/* HIDE TOP BUTTON ON MOBILE */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    .top-bar{
+        justify-content:center;
+        text-align:center;
+        padding:20px;
+    }
+
+    .top-bar .main-btn{
+        display:none;
+    }
+
+    .top-bar h1{
+        width:100%;
+        text-align:center;
+    }
+}
