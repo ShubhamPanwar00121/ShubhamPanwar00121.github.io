@@ -510,46 +510,53 @@ footer{
     gap:35px;
 }
 
-.game-card{
-    background:
-    linear-gradient(
+.game-card {
+    background: linear-gradient(
         145deg,
         rgba(255,255,255,.06),
         rgba(255,255,255,.02)
     );
 
-    border-radius:30px;
-    overflow:hidden;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .35s ease;
 
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    transition:.35s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.game-card:hover{
-    transform:translateY(-12px);
+.game-card:hover {
+    transform: translateY(-12px);
 }
 
-.game-image img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+.game-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
-.game-info{
-    padding:30px;
+.game-info {
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.coming-soon{
-    color:#ffb347;
-    font-size:.8rem;
-    letter-spacing:2px;
+.game-info .game-button {
+    margin-top: auto;
 }
 
-.game-info h3{
-    font-size:1.8rem;
-    margin:15px 0;
+.coming-soon {
+    color: #ffb347;
+    font-size: .8rem;
+    letter-spacing: 2px;
+}
+
+.game-info h3 {
+    font-size: 1.8rem;
+    margin: 15px 0;
 }
 
 .disabled-btn{
