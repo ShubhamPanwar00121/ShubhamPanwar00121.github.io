@@ -435,6 +435,10 @@ footer{
     width:90%;
     max-width:1400px;
     margin:100px auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:80px; /* Space between the cards */
 }
 
 .featured-card{
