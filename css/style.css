@@ -938,6 +938,13 @@ footer{
     font-size:1.4rem;
 }
 
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
 .model-image{
     width:100%;
     max-width:1000px;
