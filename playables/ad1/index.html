@@ -42,7 +42,43 @@
       window.open("https://play.google.com/store/apps/details?id=com.BlackSharqs.SlimeAttack", "_blank");
     }
   };
-</script>
+  </script>
+
+  <script>
+    (function() {
+      const OriginalAudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!OriginalAudioContext) return;
+
+      const contexts = [];
+      const PatchedAudioContext = function(...args) {
+        const ctx = new OriginalAudioContext(...args);
+        contexts.push(ctx);
+        return ctx;
+      };
+      PatchedAudioContext.prototype = OriginalAudioContext.prototype;
+      window.AudioContext = window.webkitAudioContext = PatchedAudioContext;
+
+      const unlockOnTouchStart = () => {
+        contexts.forEach(ctx => {
+          if (ctx.state === 'suspended') {
+            ctx.resume();
+          }
+        });
+        // Play a tiny silent buffer to force iOS/Android hardware audio unlock
+        if (contexts.length > 0) {
+          const ctx = contexts[0];
+          const buffer = ctx.createBuffer(1, 1, 22050);
+          const source = ctx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(ctx.destination);
+          if (source.start) source.start(0);
+        }
+      };
+
+      window.addEventListener('touchstart', unlockOnTouchStart, { capture: true, passive: true });
+      window.addEventListener('pointerdown', unlockOnTouchStart, { capture: true, passive: true });
+    })();
+  </script>
 
 </head>
 <body>
